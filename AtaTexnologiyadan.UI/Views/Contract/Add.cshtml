@@ -1,0 +1,25 @@
+﻿@model ContractViewModel
+@{
+    ViewData["Title"] = "Add";
+}
+
+<form asp-action="Add" asp-controller="Contract" method="post">
+    <div class="form-group">
+        <label for="exampleInputEmail1">ContractNumber</label>
+        <input asp-for="ContractNumber" class="form-control">
+    </div>
+    <div class="form-group">
+        <label for="exampleInputEmail1">Salary</label>
+        <input asp-for="Salary" class="form-control">
+    </div>
+    <div class="form-group">
+        <label for="exampleInputEmail1">Position</label>
+        <input asp-for="Position" class="form-control">
+    </div>
+    <div class="form-group">
+        <label for="exampleInputEmail1">Department</label>
+        <input asp-for="Department" class="form-control">
+    </div>
+
+    <button type="submit" class="btn btn-primary">Submit</button>
+</form>

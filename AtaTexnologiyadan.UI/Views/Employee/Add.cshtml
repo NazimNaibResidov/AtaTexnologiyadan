@@ -1,0 +1,52 @@
+﻿@model EmployeeViewModel
+<form asp-controller="Employee" asp-action="Add" method="post">
+    <div class="form-group">
+        <label for="exampleInputEmail1">Name</label>
+        <input name="Name" class="form-control" placeholder="Name">
+    </div>
+    <div class="form-group">
+
+        <input name="Surname" class="form-control" placeholder="Surname">
+    </div>
+    <div class="form-group">
+        <label for="exampleInputEmail1">BirthDate</label>
+        <input type="date" name="BirthDate" class="form-control">
+    </div>
+    <div class="form-group">
+
+        <input name="PassportNumber" class="form-control" placeholder="PassportNumber">
+    </div>
+    <div class="form-group">
+        <select name="Gender" class="form-control">
+            @foreach (var item in ViewBag.data)
+            {
+
+                <option value="@item">@item</option>
+            }
+        </select>
+        
+    </div>
+    <div class="form-group">
+
+
+        <select name="EmployeePositionId" class="form-control">
+            @foreach (var item in Model.employeePositions)
+            {
+
+                <option value="@item.Id">@item.Name</option>
+            }
+        </select>
+    </div>
+    <div class="form-group">
+
+
+        <select name="ContractId" class="form-control">
+            @foreach (var item in Model.Contracts)
+            {
+
+                <option value="@item.Id">@item.ContractNumber</option>
+            }
+        </select>
+    </div>
+    <button type="submit" class="btn btn-primary">Submit</button>
+</form>
